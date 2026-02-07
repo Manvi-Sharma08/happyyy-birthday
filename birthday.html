@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family:'Comic Sans MS',cursive;
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+margin-top:40px;
+padding:20px;
+}
+
+h1{
+font-size:46px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px pink;}
+to{text-shadow:0 0 30px red;}
+}
+
+p{
+font-size:20px;
+line-height:1.6;
+}
+
+button{
+background:hotpink;
+border:none;
+padding:14px 26px;
+border-radius:30px;
+font-size:18px;
+color:white;
+cursor:pointer;
+margin:10px;
+}
+
+button:hover{
+background:deeppink;
+}
+
+.teddy{
+font-size:80px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+/* Hearts */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear infinite;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{transform:translateY(100vh);}
+}
+
+/* Slideshow */
+
+.slideshow{
+width:280px;
+height:280px;
+margin:20px auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 20px pink;
+}
+
+.slideshow img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+}
+
+.slideshow img.active{
+display:block;
+}
+
+/* Sections */
+
+.section{
+display:none;
+background:rgba(255,255,255,0.25);
+padding:25px;
+border-radius:20px;
+max-width:850px;
+margin:30px auto;
+}
+
+/* Chat */
+
+.chatBox{
+background:#fff;
+color:#333;
+border-radius:15px;
+padding:15px;
+max-width:400px;
+margin:20px auto;
+text-align:left;
+font-family:Arial;
+}
+
+.msg{
+margin:8px 0;
+padding:8px 12px;
+border-radius:12px;
+width:fit-content;
+max-width:80%;
+}
+
+.me{
+background:#ffb6c1;
+margin-left:auto;
+}
+
+.him{
+background:#e6e6fa;
+}
+
+/* Quiz */
+
+input{
+width:80%;
+padding:8px;
+border:none;
+border-radius:10px;
+margin:6px;
+}
+
+/* Result */
+
+#resultText{
+font-size:24px;
+color:#fffacd;
+margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HOME -->
+
+<div id="home">
+
+<h1>🎂 Happy Birthday My Loveee ❤️</h1>
+
+<div class="teddy">🧸💖🧸</div>
+
+<!-- Slideshow -->
+
+<div class="slideshow">
+
+<img src="birthday_photos/photo1.jpg" class="active">
+<img src="birthday_photos/photo2.jpg">
+<img src="birthday_photos/photo3.jpg">
+<img src="birthday_photos/photo4.jpg">
+
+</div>
+
+<p>You are my smile, my happiness, my everything 😘💫</p>
+
+<button onclick="showLetter()">Open Surprise 🎁</button>
+
+</div>
+
+<!-- LETTER -->
+
+<div id="letter" class="section">
+
+<h2>💌 My Love Letter 💌</h2>
+
+<p style="text-align:left;">
+
+My Loveee ❤️<br><br>
+
+Aap 9:30 AM pe hue the 🕘❤️  
+Aur main 8:00 AM pe 🌸✨<br><br>
+
+Matlab destiny ne pehle hi plan bana liya tha 💫♾️  
+That’s why we are meant to be forever 💍💞<br><br>
+
+I LOVEEEEEEEEE YOUUUUU SOOOO MUCHHH BACHUUUUU 😘💝<br>
+I AMMM ALWAYS URSS BACHUU MERI JANN❤️
+
+</p>
+
+<button onclick="showChat()">See Our Chats 💬</button>
+
+</div>
+
+<!-- CHAT -->
+
+<div id="chat" class="section">
+
+<h2>💬 Our Love Chat 💬</h2>
+
+<div class="chatBox" id="chatBox"></div>
+
+<button onclick="startChat()">Play Chat ▶️</button>
+<button onclick="showCategory()">Next ➡️ Quiz</button>
+
+</div>
+
+<!-- CATEGORY -->
+
+<div id="category" class="section">
+
+<h2>💖 Choose Quiz 💖</h2>
+
+<button onclick="showLoveQuiz()">❤️ Love Quiz</button>
+<button onclick="showFunQuiz()">😜 Fun Quiz</button>
+<button onclick="showFutureQuiz()">💍 Future Quiz</button>
+
+</div>
+
+<!-- LOVE QUIZ -->
+
+<div id="loveQuiz" class="section">
+
+<h2>❤️ Love Quiz ❤️</h2>
+
+<input id="l1" placeholder="Who loves more? (Me/You)">
+<input id="l2" placeholder="Our favourite time together?">
+<input id="l3" placeholder="My favourite thing about you?">
+<input id="l4" placeholder="What makes me instantly happy?">
+
+<button onclick="checkLove()">Next ➡️</button>
+
+</div>
+
+<!-- FUN QUIZ -->
+
+<div id="funQuiz" class="section">
+
+<h2>😜 Fun Quiz 😜</h2>
+
+<input id="f1" placeholder="My favourite food?">
+<input id="f2" placeholder="My mood when angry?">
+<input id="f3" placeholder="Our funniest memory?">
+
+<button onclick="checkFun()">Next ➡️</button>
+
+</div>
+
+<!-- FUTURE QUIZ -->
+
+<div id="futureQuiz" class="section">
+
+<h2>💍 Future Quiz 💍</h2>
+
+<input id="fu1" placeholder="Where will we live?">
+<input id="fu2" placeholder="How many kids? 😜">
+<input id="fu3" placeholder="Will you marry me? (Yes/Ofcourse)">
+
+<button onclick="checkFuture()">See Result 💖</button>
+
+</div>
+
+<!-- RESULT -->
+
+<div id="resultBox" class="section">
+
+<h2>🎉 Your Result 🎉</h2>
+
+<p id="resultText"></p>
+
+<button onclick="restart()">Play Again 💕</button>
+
+</div>
+
+</div>
+
+<!-- MUSIC -->
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<script>
+
+let score=0;
+
+/* Navigation */
+
+function hideAll(){
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+document.getElementById("home").style.display="none";
+}
+
+function showLetter(){ hideAll(); letter.style.display="block"; }
+function showChat(){ hideAll(); chat.style.display="block"; }
+function showCategory(){ hideAll(); category.style.display="block"; }
+
+function showLoveQuiz(){ hideAll(); loveQuiz.style.display="block"; }
+function showFunQuiz(){ hideAll(); funQuiz.style.display="block"; }
+function showFutureQuiz(){ hideAll(); futureQuiz.style.display="block"; }
+
+/* Slideshow */
+
+let slideIndex=0;
+let slides=document.querySelectorAll(".slideshow img");
+
+setInterval(()=>{
+
+slides.forEach(s=>s.classList.remove("active"));
+
+slideIndex=(slideIndex+1)%slides.length;
+
+slides[slideIndex].classList.add("active");
+
+},3000);
+
+/* Chat */
+
+let chats=[
+{who:"me",text:"Hi jaan 😘❤️"},
+{who:"him",text:"Hi baby 💖"},
+{who:"me",text:"Do you know I love you sooo much? 🥹"},
+{who:"him",text:"More than you love me 😏💝"},
+{who:"me",text:"Forever with me? 💍"},
+{who:"him",text:"Always forever ❤️♾️"},
+{who:"me",text:"Happy Birthday My Love 🎂😘"}
+];
+
+let chatIndex=0;
+
+function startChat(){
+
+let box=document.getElementById("chatBox");
+box.innerHTML="";
+chatIndex=0;
+
+let interval=setInterval(()=>{
+
+if(chatIndex>=chats.length){
+clearInterval(interval);
+return;
+}
+
+let div=document.createElement("div");
+div.className="msg "+chats[chatIndex].who;
+div.innerText=chats[chatIndex].text;
+
+box.appendChild(div);
+box.scrollTop=box.scrollHeight;
+
+chatIndex++;
+
+},1000);
+
+}
+
+/* Quiz */
+
+function checkLove(){
+
+let a1=l1.value.toLowerCase();
+
+if(a1.includes("me")||a1.includes("main"))score++;
+if(l2.value!="")score++;
+if(l3.value!="")score++;
+
+showFunQuiz();
+
+}
+
+function checkFun(){
+
+if(f1.value!="")score++;
+if(f2.value!="")score++;
+if(f3.value!="")score++;
+
+showFutureQuiz();
+
+}
+
+function checkFuture(){
+
+if(fu1.value!="")score++;
+if(fu2.value!="")score++;
+if(fu3.value.toLowerCase().includes("yes")||fu3.value.toLowerCase().includes("of"))score++;
+
+showResult();
+
+}
+
+/* Result */
+
+function showResult(){
+
+hideAll();
+resultBox.style.display="block";
+
+let msg="";
+
+if(score>=7) msg="💖 Perfect Match! Soulmates Forever 😘💍";
+else if(score>=4) msg="🥰 Cute Couple! Love You ❤️";
+else msg="😜 Still Mine Forever 💕";
+
+resultText.innerHTML="Score: "+score+"/9<br><br>"+msg;
+
+}
+
+/* Restart */
+
+function restart(){
+
+score=0;
+hideAll();
+category.style.display="block";
+
+}
+
+/* Hearts */
+
+function createHeart(){
+
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),5000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
